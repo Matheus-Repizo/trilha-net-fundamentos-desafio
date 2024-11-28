@@ -17,7 +17,7 @@ namespace DesafioFundamentos.Models
             // TODO: Pedir para o usuário digitar uma placa (ReadLine) e adicionar na lista "veiculos"
             Console.WriteLine("Digite a placa do veículo para estacionar:"); // Apresenta no console a mensagem para o Usuário digitar a placa do Veiculo.
             string placaVeiculo = Console.ReadLine(); // Realiza a leitura do input gerado pelo Usúario e atribui o valor a variavel do tipo String placaVeiculo.
-            
+
             // Realiza validações, 
             if (placaVeiculo.Length > 7) // Verifica se a placa fornecida tem mais de 7 caracteres.
             {
@@ -47,13 +47,13 @@ namespace DesafioFundamentos.Models
                 // TODO: Realizar o seguinte cálculo: "precoInicial + precoPorHora * horas" para a variável valorTotal                
                 int horas = Convert.ToInt32(Console.ReadLine()); /*Realiza a leitura do input gerado pelo Usúario , 
                                                                     converte o valor de string para inteiro e atribui o mesmo a variavel do tipo int inteiro.*/
-                decimal valorTotal= precoInicial + (precoPorHora * horas); // Realiza o cálculo do valor a ser cobrado pelo tempo que o veiculo permaneceu estacionado.
+                decimal valorTotal = precoInicial + (precoPorHora * horas); // Realiza o cálculo do valor a ser cobrado pelo tempo que o veiculo permaneceu estacionado.
 
 
                 // TODO: Remover a placa digitada da lista de veículos
-                
+
                 veiculos.Remove(placa); // Faz a remoção da placa na Lista veiculos.
-               
+
                 Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}"); // Apresenta a mensagem no console com a validação da remoção da placa e o valor a ser pago.
             }
             else
@@ -67,14 +67,16 @@ namespace DesafioFundamentos.Models
             // Verifica se há veículos no estacionamento
             if (veiculos.Any())
             {
-                Console.WriteLine("Os veículos estacionados são:");
-                // TODO: Realizar um laço de repetição, exibindo os veículos estacionados
-                // *IMPLEMENTE AQUI*
-               
+                Console.WriteLine("Os veículos estacionados são:"); // Apresenta uma mensagem no console se houver veiculos estacionados.
+                // TODO: Realizar um laço de repetição, exibindo os veículos estacionados.
+                foreach (var veiculo in veiculos)
+                {
+                    Console.WriteLine(veiculo); // Apresenta no console todos os veiculos existente na Lista veiculos.
+                }
             }
             else
             {
-                Console.WriteLine("Não há veículos estacionados.");
+                Console.WriteLine("Não há veículos estacionados."); // Apresenta uma mensagem no console se não houver veiculos estacionados.
             }
         }
     }
